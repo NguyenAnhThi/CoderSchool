@@ -1,0 +1,32 @@
+<%= form_for(article) do |f| %>
+<div class="form-group ">
+  <% if article.errors.any? %>
+  <div id="error_explanation" style="color: red; border-radius: 4px; border: 1px solid red; padding: 20px;">
+    <h4><%= pluralize(article.errors.count, "error") %> prohibited this article from being saved:</h4>
+    <ul>
+      <% article.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+  <% end %>
+</div>
+<div class="form-group">
+  <div class="field">
+    <%= f.label :title%>
+    <%= f.text_field :title,class: 'form-control' %>
+  </div>
+</div>
+<div class="form-group">
+  <div class="field">
+    <%= f.label :body %>
+    <%= f.text_area :body,class: 'form-control', rows: '10' %>
+  </div>
+</div>
+<div class="form-group">
+  <div class="actions" style="text-align: right;">
+    <%= f.submit class: 'btn btn-primary' %>
+    <%= link_to 'Back', articles_path, class: 'btn btn-outline-primary'%>
+  </div>
+</div>
+<% end %>

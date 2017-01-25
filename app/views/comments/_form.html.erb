@@ -1,0 +1,19 @@
+<%= form_for([@article, @article.comments.build]) do |f| %>
+
+  <div class="form-group col-sm-offset-2 col-sm-12">
+    <div class="field">
+      <%= f.label :commenter%>
+      <%= f.text_field :commenter, class: 'form-control' %>
+    </div>
+  </div>
+
+  <div class="form-group col-sm-offset-2 col-sm-12">
+  <div class="field">
+    <%= f.label :body %>
+    <%= f.text_area :body,class: 'form-control', rows: '4' %>
+  </div>
+</div>
+  <div class="form-group col-sm-offset-2 col-sm-12" style="text-align: right;">
+    <%= f.submit 'Add comment', class: 'btn btn-primary' %>
+  </div>
+<% end %>

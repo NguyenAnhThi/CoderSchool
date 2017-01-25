@@ -1,0 +1,61 @@
+<div class="container">
+	<% unless notice.nil? || notice.empty? %>
+		<div class="alert alert-success alert-dismissable">
+			<a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+			<strong><%= notice %></strong>
+		</div>	
+	<% end %>
+	
+	<div class="row">
+		<div class="col-sm-12">
+			<div class="card">
+				<div class="card-block">
+					<h4 style="color: #0b62cf;" class="card-title"><%= @article.title %></h4>
+					<p class="card-text"><%= @markdown.render(@article.body).html_safe %></p>
+				</div>
+				<div class="card-footer" style="text-align: right">
+					<b><span style="margin-right: 10px;"><%= pluralize(@article.view, 'view') %></span></b>
+					<%= link_to 'Edit', edit_article_path(@article), class: 'btn btn-warning'  %>
+					<%= link_to 'Delete', article_path(@article), class: 'btn btn-danger',
+					method: :delete,
+					data: { confirm: 'Are you sure?' } %>					
+					<button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal">Comment</button>
+					<%= link_to 'Back', articles_path, class: 'btn btn-outline-primary'%>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<br>
+		
+		
+
+	<h4> <%= pluralize(@article.comments.count, 'Comment') %>:</h4>
+		<% if @article.comments.count > 0 %>
+			<%= render @article.comments %>
+		<% else %>
+			<p><em>There's no comment.</em></p>
+		<% end %>
+
+		<!-- Modal -->
+		<div class="modal fade" id="myModal" role="dialog">
+			<div class="modal-dialog modal-lg">
+				
+				<!-- Modal content-->
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+						<h4 class="modal-title">Add a comment</h4>
+					</div>
+					<div class="modal-body">						
+						<%= render 'comments/form' %>
+					</div>
+					<!-- <div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div> -->
+				</div>
+				
+			</div>
+		</div>
+
+</div>
