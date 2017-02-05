@@ -1,2 +1,40 @@
 // Custom bootstrap variables must be set or imported *before* bootstrap.
 @import "bootstrap";
+@import "articles";
+
+#main-container{
+	margin-top: 100px;
+	margin-bottom: 80px;
+	padding-top: 30px;
+	padding-bottom: 10px;
+	-webkit-box-shadow: 0px 4px 12px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 4px 12px 0px rgba(0,0,0,0.75);
+	box-shadow: 0px 4px 12px 0px rgba(0,0,0,0.75);
+}
+
+#logo{
+	font-size: 24px;
+}
+
+#slogan{
+	color: #b7b7b4; 
+	font-family: 'Times New Roman'; 
+	font-size: 24px;
+}
+
+.nav-item{
+	margin-top: 8px;
+}
+
+footer{
+	background-color: black; 
+	height: 50px; 
+	position: fixed; 
+	bottom: 0; 
+	width: 100%;
+}
+
+footer div{
+	text-align: center; 
+	padding-top: 15px;
+}

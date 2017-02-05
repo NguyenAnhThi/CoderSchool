@@ -6,7 +6,7 @@
 			<div class="card-block">
 				<p class="card-title"><%= comment.body %></p>
 			</div>
-			<div class="card-footer" style="text-align: right">
+			<div class="card-footer">
 			<h5 style="display: inline; color: #19b500"> <%= comment.commenter %></h5> <em>commented at</em> <%= comment.created_at.in_time_zone('Hanoi').strftime(" %I:%M:%p - %d %b %Y") %>
 				<small>
 					<%= link_to 'Delete this comment', [comment.article, comment],

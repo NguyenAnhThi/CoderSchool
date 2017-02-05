@@ -8,22 +8,11 @@
 	</head>
 	<body>
 		<%= render "layouts/header" %>
-		<div class="container" style="
-			/*margin-top: 66px;*/
-			margin-top: 100px;
-			margin-bottom: 80px;
-			padding-top: 30px;
-			padding-bottom: 10px;
-			-webkit-box-shadow: 0px 4px 12px 0px rgba(0,0,0,0.75);
-			-moz-box-shadow: 0px 4px 12px 0px rgba(0,0,0,0.75);
-			box-shadow: 0px 4px 12px 0px rgba(0,0,0,0.75);"
-			>
-			<%= yield %>
-			
-		</div>
-		
+		<div class="container" id="main-container">
+			<%= yield %>	
+		</div>	
 	</body>
-	<footer style="background-color: black; height: 50px; position: fixed; bottom: 0; width: 100%;">
-		<div style="text-align: center; padding-top: 15px;">Prework for CoderSchool Full-Stack Web (Ruby & JS) Feb 2017</div>
+	<footer >
+		<div >Prework for CoderSchool Full-Stack Web (Ruby & JS) Feb 2017</div>
 	</footer>
 </html>

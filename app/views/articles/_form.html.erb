@@ -1,7 +1,7 @@
 <%= form_for(article) do |f| %>
 <div class="form-group ">
   <% if article.errors.any? %>
-  <div id="error_explanation" style="color: red; border-radius: 4px; border: 1px solid red; padding: 20px;">
+  <div id="error_explanation">
     <h4><%= pluralize(article.errors.count, "error") %> prohibited this article from being saved:</h4>
     <ul>
       <% article.errors.full_messages.each do |message| %>
@@ -24,7 +24,7 @@
   </div>
 </div>
 <div class="form-group">
-  <div class="actions" style="text-align: right;">
+  <div class="actions" >
     <%= f.submit class: 'btn btn-primary' %>
     <%= link_to 'Back', articles_path, class: 'btn btn-outline-primary'%>
   </div>
